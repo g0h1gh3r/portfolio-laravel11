@@ -13,9 +13,9 @@
         <div class="row">
             <div class="col-sm-12">
                 <ul class="filter-menu">
-                    <li class="active" data-filter="*">All Projects</li>
+                    <li class="active" data-filter="*">All Blogs</li>
                     @foreach( $blogCategories as $blogCategory )
-                        <li data-filter=".{{$blogCategory->slug}}">{{ $blogCategory->name }}</li>
+                        <li data-filter="{{$blogCategory->slug}}">{{ $blogCategory->name }}</li>
                     @endforeach
                 </ul>
             </div>
