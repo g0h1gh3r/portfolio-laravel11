@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use App\Mail\ContactMail;
 use App\Models\About;
 use App\Models\Blog;
+use App\Models\BlogCategory;
+use App\Models\BlogSectionSetting;
 use App\Models\Category;
 use App\Models\ContactSectionSetting;
 use App\Models\Experience;
@@ -43,6 +45,8 @@ class HomeController extends Controller
         $feedbacks = Feedback::all();
         $feedbackSectionSetting = FeedbackSectionSetting::first();
         $blogs = Blog::latest()->take(5)->get();
+        $blogSectionSetting = BlogSectionSetting::first();
+        $blogCategories = BlogCategory::all();
         $contactSectionSetting = ContactSectionSetting::first();
         $footerSocialLinks = FooterSocialLink::all();
         $footerUsefulLinks = FooterUsefulLink::all();
@@ -63,6 +67,8 @@ class HomeController extends Controller
          'feedbacks',
          'feedbackSectionSetting',
          'blogs',
+         'blogSectionSetting',
+         'blogCategories',
          'contactSectionSetting',
          'footerSocialLinks',
          'footerUsefulLinks',
